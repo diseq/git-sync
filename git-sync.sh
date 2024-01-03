@@ -35,6 +35,9 @@ else
   git clone "$SOURCE_REPO" /root/source --origin source && cd /root/source
 fi
 
+# increase buffer size
+git config --global http.postBuffer 524288000
+
 git remote add destination "$DESTINATION_REPO"
 
 # Pull all branches references down locally so subsequent commands can see them
